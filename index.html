@@ -138,6 +138,7 @@
           <button type="button" aria-label="Второй слайд"></button>
           <button type="button" aria-label="Третий слайд"></button>
         </div>
+      </div>
     </section>
     <section class="categories container">
       <h2 class="visually-hidden">Категории товаров интернет-магазина «Девайс»</h2>
@@ -252,7 +253,7 @@
         <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки.
           Всякое
           бывает.</p>
-        <button class="button-map" type="button"><img src="img/map-1.png" alt="Расположение на карте" width="560"
+        <button class="button-map" type="button"><img src="img/map-small.png" alt="Расположение на карте" width="560"
             height="222"></button>
         <button class="button button-feedback" type="button">Напишите нам</button>
       </section>
@@ -333,10 +334,19 @@
         <label for="message-text">Текст письма:</label>
         <textarea name="text" id="message-text" placeholder="В свободной форме"></textarea>
       </p>
-      <button class="button button-feedback" type="submit">Отправить</button>
+      <button class="button button-send" type="submit">Отправить</button>
     </form>
     <button class="modal-close" type="button" aria-label="Закрыть"></button>
   </section>
+  <section class="modal modal-map">
+    <h2 class="visually-hidden">Расположение на карте</h2>
+    <figure>
+      <img src="img/map-big.png" alt="Расположение на карте" width="994" height="593">
+    </figure>
+    <iframe src="https://yandex.ru/map-widget/v1/-/CCQheQcL0C" allowfullscreen width="994" height="593"></iframe>
+    <button class="modal-close" type="button" aria-label="Закрыть"></button>
+  </section>
+  <script src="js/feedback.js"></script>
 </body>
 
 </html>

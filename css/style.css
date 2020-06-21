@@ -495,7 +495,7 @@ input[type="radio"].visually-hidden {
    position: absolute;
    top: 0;
    right: 0;
-   z-index: 1; /* Не работает */
+   z-index: -1; /* Не работает */
    font-weight: 800;
    font-size: 179px;
    line-height: 219px;
@@ -528,6 +528,7 @@ input[type="radio"].visually-hidden {
    overflow: hidden;
    border: none;
    background-color: transparent;
+   cursor: pointer;
 }
 
 .button::before {
@@ -982,6 +983,7 @@ input[type="radio"].visually-hidden {
 .filters {
    background-color: var(--basic-light-gray);
    position: relative;
+   z-index: 0;
 }
 
 .filters::before {
@@ -1116,6 +1118,10 @@ input[type="radio"].visually-hidden {
    font-weight: 300;
    font-size: 14px;
    line-height: 19px;
+}
+
+.button-filter {
+   width: 100%;
 }
 
 /* Range-filter */
@@ -1657,18 +1663,37 @@ input[type="radio"].visually-hidden {
 
 .modal {
    display: none;
-   box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.15);
+   position: fixed;
+   z-index: 1000;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   margin: auto;
+   box-sizing: border-box;
+}
+
+.modal-show {
+   display: block;
 }
 
 .modal-feedback {
-   padding: 90px 100px 50px;
+   box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.15);
+   padding-top: 90px;
+   width: 960px;
+   height: 550px;
+   background-color: var(--basic-white);
+   margin: auto;
 }
 
 .feedback {
    width: 760px;
+   margin: auto;
 }
 
 .feedback label {
+   display: inline-block;
+   vertical-align: top;
    margin-bottom: 10px;
    font-weight: 800;
 }
@@ -1703,6 +1728,8 @@ input[type="radio"].visually-hidden {
 
 .button-feedback {
    margin-top: 40px;
+   padding-left: 35px;
+   padding-right: 35px;
 }
 
 .modal-close {
@@ -1711,4 +1738,75 @@ input[type="radio"].visually-hidden {
    width: 55px;
    height: 55px;
    border-radius: 50%;
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   cursor: pointer;
+}
+
+.modal-shake {
+   animation: shake 0.6s;
+}
+
+.modal-close::before {
+   content: "";
+   position: absolute;
+   width: 27px;
+   height: 2px;
+   background-color: var(--basic-white);
+   top: 27px;
+   left: 14px;
+   transform: rotate(45deg);
+}
+
+.modal-close::after {
+   content: "";
+   position: absolute;
+   width: 27px;
+   height: 2px;
+   background-color: var(--basic-white);
+   top: 27px;
+   left: 14px;
+   transform: rotate(-45deg);
+}
+
+/* Modal map */
+
+.modal-map {
+   width: 994px;
+   height: 593px;
+}
+
+.modal-map figure {
+   padding: 0;
+   margin: 0;
+   border: none;
+}
+
+.modal-map iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   border: none;
+}
+
+.modal-map .modal-close {
+   top: 30px;
+   right: 35px;
+}
+
+/* Animations */
+
+@keyframes shake {
+   0%, 100% {
+      transform: translateX(0);
+   }
+   10%, 30%, 50%, 70%,
+   90% {
+      transform: translateX(-30px);
+   }
+
+   20%, 40%, 60%, 80% {
+      transform: translateX(30px);
+   }
 }
