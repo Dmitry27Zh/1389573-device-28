@@ -823,6 +823,14 @@ input[type="radio"].visually-hidden {
    justify-content: space-between;
 }
 
+.logotypes-item {
+   filter: grayscale(1) opacity(0.2);
+}
+
+.logotypes-item:hover {
+   filter: none;
+}
+
 /* Index columns */
 
 .index-columns {
@@ -901,7 +909,7 @@ input[type="radio"].visually-hidden {
 .contacts p {
    margin: 0;
    margin-bottom: 40px;
-   font-family: "Opens Sans", sans-serif;
+   font-family: "Opens Sans", "Arial", sans-serif;
    font-weight: 300;
    font-size: 15px;
    line-height: 28px;
@@ -953,7 +961,7 @@ input[type="radio"].visually-hidden {
 
 .breadcrumbs li {
    margin-right: 40px;
-   font-family: "Opens Sans", sans-serif;
+   font-family: "Opens Sans", "Arial", sans-serif;
    font-weight: 300;
    font-size: 14px;
    line-height: 19px;
@@ -1126,7 +1134,7 @@ input[type="radio"].visually-hidden {
 }
 
 .filter-option label {
-   font-family: "Opens Sans", sans-serif;
+   font-family: "Opens Sans", "Arial", sans-serif;
    font-weight: 300;
    font-size: 14px;
    line-height: 19px;
@@ -1232,7 +1240,7 @@ input[type="radio"].visually-hidden {
 
 .sort-list a {
    margin-right: 30px;
-   font-family: "Opens Sans", sans-serif;
+   font-family: "Opens Sans", "Arial", sans-serif;
    font-weight: normal;
    font-size: 14px;
    line-height: 19px;
@@ -1579,7 +1587,7 @@ input[type="radio"].visually-hidden {
 .footer-user-nav,
 .footer-address,
 .footer-tel {
-   font-family: "Opens Sans", sans-serif;
+   font-family: "Opens Sans", "Arial", sans-serif;
    font-weight: 300;
    font-size: 15px;
    line-height: 20px;
